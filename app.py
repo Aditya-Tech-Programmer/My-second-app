@@ -918,9 +918,11 @@ Respond in a friendly Hinglish/English style. Use headings and bullets when usef
     client = genai.Client(api_key=api_key)
     last_error = None
 
+    GEMINI_MODEL = ["gemini-3.8-flash"]
+
     # Try the preferred model, then a fallback model. Each temporary error
     # gets a short exponential-backoff retry before moving on.
-    for model_name in GEMINI_MODEL = ["gemini-3.8-flash"]:
+    for model_name in GEMINI_MODEL:
         for attempt in range(3):
             try:
                 response = client.models.generate_content(
