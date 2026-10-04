@@ -920,7 +920,7 @@ Respond in a friendly Hinglish/English style. Use headings and bullets when usef
 
     # Try the preferred model, then a fallback model. Each temporary error
     # gets a short exponential-backoff retry before moving on.
-    for model_name in GEMINI_MODELS:
+    for model_name in GEMINI_MODEL = ["gemini-3.8-flash"]:
         for attempt in range(3):
             try:
                 response = client.models.generate_content(
